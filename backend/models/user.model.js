@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 
-// Définition du schéma Mongoose pour un utilisateur (User)
+// Definition of the Mongoose schema for a user (User)
 const userSchema = new Schema({
   nom: { type: String, required: true },
   email: { type: String, required: true, unique: true },
@@ -10,9 +10,9 @@ const userSchema = new Schema({
   dateCreation: { type: Date, default: Date.now },
 });
 
-// Création du modèle Mongoose "User"
-// Le 3e argument ("users") est le nom explicite de la collection MongoDB
-// Si la collection existe, elle sera utilisée, sinon elle sera créée automatiquement
+// Creation of the Mongoose "User" template
+// The third argument ("users") is the explicit name of the MongoDB collection.
+// If the collection exists, it will be used; otherwise, it will be created automatically.
 const User = model("User", userSchema, "users");
 
 export default User;

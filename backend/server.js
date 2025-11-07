@@ -4,23 +4,24 @@ import cors from "cors";
 import userRoute from "./routes/user.route.js";
 import dotenv from "dotenv";
 
-// Charger les variables d'environnement du fichier .env
+// Load the environment variables from the .env file
 dotenv.config();
 
 const app = express();
 
-// Récupérer les variables d'environnement ou mettre des valeurs par défaut
+// Retrieve environment variables or set default values
+
 const port = process.env.PORT || 3000;
 const mongoURI = process.env.MONGODB_URI;
 const corsOrigin = process.env.CORS_ORIGIN;
 
-// Middleware pour parser le JSON dans les requêtes HTTP
+// Middleware to parse JSON in HTTP requests
 app.use(express.json());
 
-// Middleware pour parser les données URL-encoded (formulaires HTML)
+// Middleware for parsing URL-encoded data (HTML forms) 
 app.use(express.urlencoded({ extended: false }));
 
-// Configuration CORS dynamique via variable d'env
+// Dynamic CORS configuration via environment variable
 app.use(
   cors({
     origin: corsOrigin,
@@ -38,13 +39,13 @@ app.get("/", (req, res) => {
 async function main() {
   try {
     await mongoose.connect(mongoURI);
-    console.log("Connexion à MongoDB réussie");
+    console.log("Connection to MongoDB successful");
 
     app.listen(port, () => {
-      console.log(`Serveur démarré sur le port ${port}`);
+      console.log(`Server started on port ${port}`);
     });
   } catch (error) {
-    console.error("Connexion à MongoDB échouée :", error);
+    console.error("Connection to MongoDB failed :", error);
   }
 }
 
