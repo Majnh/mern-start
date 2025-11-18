@@ -1,4 +1,4 @@
-# Minimalist MERN Boilerplate
+# Minimalist mern-start
 
 ## Description
 
@@ -33,8 +33,8 @@ Minimalist boilerplate for a MERN (MongoDB, Express, React, Node.js) application
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/HazGri/MERN-Boilerplate.git
-   cd MERN-Boilerplate
+   git clone git@github.com:Majnh/mern-start.git
+   cd mern-start
    ```
 
 2. **Start the backend:**
