@@ -18,7 +18,7 @@ const corsOrigin = process.env.CORS_ORIGIN;
 // Middleware to parse JSON in HTTP requests
 app.use(express.json());
 
-// Middleware for parsing URL-encoded data (HTML forms) 
+// Middleware for parsing URL-encoded data (HTML forms)
 app.use(express.urlencoded({ extended: false }));
 
 // Dynamic CORS configuration via environment variable
